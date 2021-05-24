@@ -1,9 +1,11 @@
+using Infrastructure.Context;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -37,6 +39,12 @@ namespace Asclepius
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Asclepius", Version = "v1" });
             });
+
+            services.AddDbContext<AsclepiusContext>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("Asclepius"));
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
