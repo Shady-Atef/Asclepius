@@ -12,12 +12,11 @@ namespace Infrastructure
 
         public AsclepiusUOW(AsclepiusContext _context, UserManager<ApplicationUser> userManager)
         {
-            this.Context = _context;      
+            this.Context = _context;
         }
         public AsclepiusUOW(AsclepiusContext _context)
         {
             this.Context = _context;
-
         }
         public void SaveChanges()
         {
