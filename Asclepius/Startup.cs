@@ -4,13 +4,13 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Microsoft.Identity.Web;
 using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
@@ -31,8 +31,23 @@ namespace Asclepius
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-                .AddMicrosoftIdentityWebApi(Configuration.GetSection("AzureAd"));
+            #region Identity
+            services.AddIdentity<ApplicationUser, IdentityRole<long>>(
+               opt =>
+               {
+                   opt.Lockout.AllowedForNewUsers = true;
+                   opt.Lockout.MaxFailedAccessAttempts = Configuration.GetValue<int>("Auth:MaxFailedAccessAttemptsBeforeLockout");
+                    //opt.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(Configuration.GetValue<double>("Auth:DefaultAccountLockoutTimeSpan"));
+                    opt.Lockout.DefaultLockoutTimeSpan = TimeSpan.MaxValue;
+
+               })
+               .AddEntityFrameworkStores<AsclepiusContext>()
+               .AddDefaultTokenProviders();
+            #endregion
+            //services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            //    .AddMicrosoftIdentityWebApi(Configuration.GetSection("AzureAd"));
+
+
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
