@@ -1,14 +1,5 @@
-﻿using Domain.ApplicationUserAggregate;
-using Domain.NotificationSettingAggregate;
-using Infrastructure.Context;
-using Infrastructure.Repositories;
-using Infrastructure.Repositories.Views;
+﻿using Infrastructure.Context;
 using Microsoft.AspNetCore.Identity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Infrastructure
 {
