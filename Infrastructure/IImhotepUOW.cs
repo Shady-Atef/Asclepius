@@ -1,6 +1,6 @@
 ﻿namespace Infrastructure
 {
-    public interface IAsclepiusUOW
+    public interface IImhotepUOW
     {
         void SaveChanges();
     }

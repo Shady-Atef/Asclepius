@@ -1,4 +1,4 @@
-﻿using Asclepius.Controllers.PatientController.Request;
+﻿using Imhotep.Controllers.PatientController.Request;
 using Domain.PatientAggregate;
 using Domain.PatientAggregate.Inputs;
 using Infrastructure;
@@ -6,16 +6,16 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System;
 
-namespace Asclepius.Controllers.PatientController
+namespace Imhotep.Controllers.PatientController
 {
     [ApiController]
     [Route("api/Patient")]
     public class PatientController : Controller
     {
-        public AsclepiusUOW UOW { get; }
+        public ImhotepUOW UOW { get; }
         public IMediator Mediator { get; }
 
-        public PatientController(AsclepiusUOW _uow, IMediator _mediatR)
+        public PatientController(ImhotepUOW _uow, IMediator _mediatR)
         {
             this.UOW = _uow;
             this.Mediator = _mediatR;

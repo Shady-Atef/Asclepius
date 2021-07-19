@@ -5,9 +5,9 @@ namespace Infrastructure.Repositories
 {
     public class PatientRepo
     {
-        private AsclepiusContext Context { get; }
+        private ImhotepContext Context { get; }
 
-        public PatientRepo(AsclepiusContext _context)
+        public PatientRepo(ImhotepContext _context)
         {
             this.Context = _context;
         }

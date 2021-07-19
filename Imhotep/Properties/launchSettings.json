@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Asclepius": {
+    "Imhotep": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,

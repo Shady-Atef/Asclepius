@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Context
 {
-    public class AsclepiusContext : IdentityDbContext<ApplicationUser, IdentityRole<long>, long>
+    public class ImhotepContext : IdentityDbContext<ApplicationUser, IdentityRole<long>, long>
     {
-        public AsclepiusContext(DbContextOptions<AsclepiusContext> options) : base(options)
+        public ImhotepContext(DbContextOptions<ImhotepContext> options) : base(options)
         {
         }
 

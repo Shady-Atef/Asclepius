@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{A378C892-67F5-46DE-96DE-8B8336752BFD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{A378C892-67F5-46DE-96DE-8B8336752BFD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{C6803059-76DD-4054-A147-75F5DF89BB88}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{C6803059-76DD-4054-A147-75F5DF89BB88}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities", "Utilities\Utilities.csproj", "{3A89F1FE-5E38-435E-9ED0-B34F723936BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utilities", "Utilities\Utilities.csproj", "{3A89F1FE-5E38-435E-9ED0-B34F723936BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asclepius", "Asclepius\Asclepius.csproj", "{46E5127D-0D76-43E6-A7BE-FD85F355C0E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImhotepAPI", "Imhotep\ImhotepAPI.csproj", "{46E5127D-0D76-43E6-A7BE-FD85F355C0E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

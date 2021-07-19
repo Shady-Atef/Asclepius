@@ -8,8 +8,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Infrastructure.Migrations
 {
-    [DbContext(typeof(AsclepiusContext))]
-    partial class AsclepiusContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(ImhotepContext))]
+    partial class ImhotepContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {

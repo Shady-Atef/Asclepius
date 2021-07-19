@@ -12,7 +12,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AsclepiusAPI
+namespace ImhotepAPI
 {
     public class Startup
     {
@@ -30,7 +30,7 @@ namespace AsclepiusAPI
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "AsclepiusAPI", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "ImhotepAPI", Version = "v1" });
             });
         }
 
@@ -41,7 +41,7 @@ namespace AsclepiusAPI
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "AsclepiusAPI v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ImhotepAPI v1"));
             }
 
             app.UseHttpsRedirection();

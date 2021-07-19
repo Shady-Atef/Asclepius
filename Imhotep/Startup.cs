@@ -14,7 +14,7 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 
-namespace Asclepius
+namespace Imhotep
 {
     public class Startup
     {
@@ -38,7 +38,7 @@ namespace Asclepius
                    //opt.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(Configuration.GetValue<double>("Auth:DefaultAccountLockoutTimeSpan"));
                    opt.Lockout.DefaultLockoutTimeSpan = TimeSpan.MaxValue;
                })
-               .AddEntityFrameworkStores<AsclepiusContext>()
+               .AddEntityFrameworkStores<ImhotepContext>()
                .AddDefaultTokenProviders();
 
             #endregion Identity
@@ -49,7 +49,7 @@ namespace Asclepius
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Asclepius", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Imhotep", Version = "v1" });
 
                 c.AddSecurityRequirement(new OpenApiSecurityRequirement()
                   {
@@ -70,9 +70,9 @@ namespace Asclepius
                     });
             });
 
-            services.AddDbContext<AsclepiusContext>(options =>
+            services.AddDbContext<ImhotepContext>(options =>
             {
-                options.UseSqlServer(Configuration.GetConnectionString("Asclepius"));
+                options.UseSqlServer(Configuration.GetConnectionString("Imhotep"));
             });
             services.AddControllers().AddJsonOptions(jsonOptions =>
             {
@@ -86,7 +86,7 @@ namespace Asclepius
             })
                .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 
-            services.AddScoped<AsclepiusUOW>();
+            services.AddScoped<ImhotepUOW>();
 
             services.AddMediatR(Assembly.GetExecutingAssembly());
         }
@@ -98,7 +98,7 @@ namespace Asclepius
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Asclepius v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Imhotep v1"));
             }
 
             app.UseHttpsRedirection();

@@ -1,6 +1,6 @@
 using System;
 
-namespace Asclepius
+namespace Imhotep
 {
     public class WeatherForecast
     {

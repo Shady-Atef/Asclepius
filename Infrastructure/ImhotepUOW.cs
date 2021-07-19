@@ -4,18 +4,18 @@ using Microsoft.AspNetCore.Identity;
 
 namespace Infrastructure
 {
-    public class AsclepiusUOW : IAsclepiusUOW
+    public class ImhotepUOW : IImhotepUOW
     {
-        private AsclepiusContext Context { get; }
+        private ImhotepContext Context { get; }
         public PatientRepo PatientRepo { get; set; }
 
-        public AsclepiusUOW(AsclepiusContext _context, UserManager<ApplicationUser> userManager)
+        public ImhotepUOW(ImhotepContext _context, UserManager<ApplicationUser> userManager)
         {
             this.Context = _context;
             this.PatientRepo = new PatientRepo(Context);
         }
 
-        public AsclepiusUOW(AsclepiusContext _context)
+        public ImhotepUOW(ImhotepContext _context)
         {
             this.Context = _context;
             this.PatientRepo = new PatientRepo(Context);

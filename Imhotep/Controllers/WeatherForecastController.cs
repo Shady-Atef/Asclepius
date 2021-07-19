@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Asclepius.Controllers
+namespace Imhotep.Controllers
 {
     [Authorize]
     [ApiController]
