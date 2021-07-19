@@ -1,11 +1,7 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Domain.PatientAggregate;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Infrastructure.Context
 {
@@ -13,7 +9,6 @@ namespace Infrastructure.Context
     {
         public AsclepiusContext(DbContextOptions<AsclepiusContext> options) : base(options)
         {
-
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -22,5 +17,7 @@ namespace Infrastructure.Context
 
             optionsBuilder.UseLazyLoadingProxies();
         }
+
+        public DbSet<Patient> Patient { get; set; }
     }
 }
